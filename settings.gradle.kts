@@ -1,6 +1,7 @@
 rootProject.name = "multiproject-demo"
 
 include("stat")
+include("harrods")
 
 pluginManagement {
     val SPRING_BOOT_VERSION: String by settings
