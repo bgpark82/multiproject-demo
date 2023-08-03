@@ -6,7 +6,7 @@ on:
     paths:
       - stat/**
 jobs:
-  harrods-build:
+  stat-build:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
