@@ -8,4 +8,5 @@ class HarrodsApplication
 
 fun main(args: Array<String>) {
     runApplication<HarrodsApplication>(*args)
+    println("hello")
 }
