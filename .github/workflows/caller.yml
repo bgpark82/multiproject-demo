@@ -8,5 +8,5 @@ jobs:
     name: deploy
     runs-on: ubuntu-22.04
     steps:
-      - name: hello world
-        run: echo "hello world"
+      - name: hello world v2
+        run: echo "hello world v2"
