@@ -1,6 +1,8 @@
 name: stat-build
 on:
   workflow_dispatch:
+    branches:
+      - dev
   pull_request_target:
     types:
       - closed
