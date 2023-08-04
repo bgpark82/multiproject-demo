@@ -4,4 +4,4 @@ on:
 
 jobs:
   test:
-    uses: ./github/workflows/caller.yml
+    uses: ./.github/workflows/caller.yml
