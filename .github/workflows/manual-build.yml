@@ -3,5 +3,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  manual-build:
     uses: ./.github/workflows/caller.yml

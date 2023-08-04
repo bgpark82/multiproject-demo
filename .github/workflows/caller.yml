@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: reusable workflow
 
 on:
   workflow_call:
@@ -6,7 +6,7 @@ on:
 jobs:
   reusable_workflow_job:
     name: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: hello world
         run: echo "hello world"
