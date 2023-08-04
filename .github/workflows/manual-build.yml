@@ -6,8 +6,7 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+
 jobs:
   test:
     runs-on: ubuntu-22.04
