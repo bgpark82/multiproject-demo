@@ -1,13 +1,12 @@
 name: stat-build
 on:
-  push:
+  pull_request_target:
+    types:
+      - closed
     branches:
       - dev
     paths:
       - stat/**
-  pull_request_target:
-    types:
-      - closed
 jobs:
   stat-build:
     if: github.event.pull_request.merged == true
