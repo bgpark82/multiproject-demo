@@ -4,7 +4,4 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: hello world
-        run: echo "hello world"
+    uses: ./github/workflows/caller.yml
