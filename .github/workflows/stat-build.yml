@@ -5,9 +5,9 @@ on:
       - dev
     paths:
       - stat/**
-    pull_request_target:
-      types:
-        - closed
+  pull_request_target:
+    types:
+      - closed
 jobs:
   stat-build:
     if: github.event.pull_request.merged == true
