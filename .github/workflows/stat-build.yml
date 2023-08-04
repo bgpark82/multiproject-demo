@@ -5,8 +5,12 @@ on:
       - dev
     paths:
       - stat/**
+    pull_request_target:
+      types:
+        - closed
 jobs:
   stat-build:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository

@@ -8,5 +8,5 @@ class StatApplication
 
 fun main(args: Array<String>) {
     runApplication<StatApplication>(*args)
-    println("hello")
+    println("stat")
 }
