@@ -4,4 +4,4 @@ on:
 
 jobs:
   manual-build:
-    uses: ./.github/workflows/caller.yml
+    uses: ./.github/workflows/harrods-builder.yml

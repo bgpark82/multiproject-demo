@@ -16,8 +16,33 @@ jobs:
           java-version: 17
 
       - name: Install Kotlin
-        run: sudo snap install --classic kotlin
+        run: sudo snap install --classic kotlin --channel=1.7
+
+      - name: Cache gradle
+        id: gradle-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*','**/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
 
       # 프로젝트 빌드
       - name: Build
         run: ./gradlew :harrods:build
+
+      - name: Compress tar
+        run: tar -cvf stat.tar -C ./harrods/build/libs .
+
+#      # https://github.com/aws-actions/configure-aws-credentials
+#      - name: Configure AWS credentials
+#        uses: aws-actions/configure-aws-credentials@v2
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws-region: ap-northeast-2
+#
+#      # https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-services-s3-commands.html
+#      - name: Upload to S3
+#        run: aws s3 cp --region ap-northeast-2 log-collection-${{ github.ref_name }}.tar s3://musinsa-server-build/log-collection-api/${{ github.ref_name }}/log-collection-${{ github.ref_name }}.tar
